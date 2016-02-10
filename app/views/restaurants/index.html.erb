@@ -1,18 +1,22 @@
+
+<h1 class="text-center">All Restaurants</h1>
+
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <% @restaurants.each do |restaurant|%>
 
-      <h1>All Restaurants</h1>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+        <ul class="list-unstyled">
+          <li><h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3></li>
+          <li><%= restaurant.address %></li>
+          <li><%= restaurant.phone_number %></li>
+          <li><%= restaurant.category %></li>
+        </ul>
+        </div>
+      </div>
+      <%end%>
 
-      <ul class="list-unstyled">
-        <% @restaurants.each do |restaurant|%>
-        <li><h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3></li>
-        <li><%= restaurant.address %></li>
-        <li><%= restaurant.phone_number %></li>
-        <li><%= restaurant.category %></li>
-        <%end%>
-      </ul>
-
-    </div>
   </div>
 </div>
