@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+      <h1>My Restaurants</h1>
+
+      <ul class="list-unstyled">
+        <% @restaurants.each do |restaurant|%>
+        <ul class="list-inline">
+          <li><h3><%= link_to restaurant.name, restaurant_path(restaurant)%></h3></li>
+          <li><%= link_to admin_restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } do%><i class="fa fa-trash"></i><%end%></li>
+        </ul>
+        <li><%= restaurant.address %></li>
+        <li><%= restaurant.phone_number %></li>
+        <li><%= restaurant.category %></li>
+        <%end%>
+      </ul>
+
+    </div>
+  </div>
+</div>
