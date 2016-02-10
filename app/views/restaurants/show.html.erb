@@ -28,9 +28,11 @@
       <h5 class=""><strong>Add a new Review</strong></h5>
       <%= simple_form_for [@restaurant, @review] do |f| %>
       <%= f.input :content %>
-      <%= f.input :rating, collection:0..5, prompt: "Give a rating between 0 and 5" %>
+      <%= f.label :rating %> <br> <%=render 'shared/stars' %>
       <%= f.button :submit, class: "btn btn-primary btn-block" %>
       <% end %>
+
+
     </div>
   </div>
 </div>
